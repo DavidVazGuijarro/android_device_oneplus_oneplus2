@@ -124,6 +124,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bdAddrLoader
 
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -237,38 +241,3 @@ PRODUCT_COPY_FILES += \
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
-
-# WiFi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin \
-    $(LOCAL_PATH)/wifi/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/wifi/msap.conf:system/etc/msap.conf \
-    $(LOCAL_PATH)/wifi/xtwifi.conf:system/etc/xtwifi.conf
-
-PRODUCT_PACKAGES += \
-    dhcpcd.conf \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf \
-    hostapd_default.conf \
-    hostapd.accept \
-    hostapd.deny
-
-PRODUCT_PACKAGES += \
-    wcnss_service
-
-# Misc dependency packages
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    curl \
-    libnl_2 \
-    libbson \
-    libcnefeatureconfig \
-    libtinyxml \
-    libxml2
