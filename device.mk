@@ -235,6 +235,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/fpc1021.conf:system/etc/fpc1021.conf
 
+# TCM
+PRODUCT_PACKAGES += tcmiface
+
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
