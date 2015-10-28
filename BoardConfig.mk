@@ -100,7 +100,12 @@ BOARD_HAS_QCA_BT_ROME := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/oneplus2/bluetooth
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"persist.audio.", AID_SYSTEM, 0}, {"persist.sys.camera.", AID_MEDIA, 0}, {"camera.", AID_MEDIA, 0}, {"sys.media.", AID_MEDIA, 0},'
+COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND=' \
+    {"persist.audio.", AID_SYSTEM, 0}, \
+    {"persist.sys.camera.", AID_MEDIA, 0}, \
+    {"camera.", AID_MEDIA, 0}, \
+    {"sys.media.", AID_MEDIA, 0}, \ 
+    '
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
@@ -110,8 +115,8 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # GPS
-#TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
-#TARGET_NO_RPC := true
+TARGET_GPS_HAL_PATH := device/oneplus/oneplus2/gps
+TARGET_NO_RPC := true
 
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -131,7 +136,7 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.c
+TARGET_LIBINIT_DEFINES_FILE := device/oneplus/oneplus2/init/init_oneplus2.cpp
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
