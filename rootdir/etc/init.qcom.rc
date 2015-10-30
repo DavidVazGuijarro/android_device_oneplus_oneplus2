@@ -51,6 +51,9 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
+    # Support legacy libs
+    symlink /system/vendor/lib/egl /egl
+
     chown system system /sys/bus/spi/drivers/fpc1020/spi12.0/diag/spi_register
     chown system system /sys/bus/spi/drivers/fpc1020/spi12.0/diag/spi_data
     chown system system /sys/bus/spi/drivers/fpc1020/spi12.0/setup/adc_gain
