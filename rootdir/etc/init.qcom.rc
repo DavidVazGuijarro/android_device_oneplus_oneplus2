@@ -35,7 +35,8 @@ on early-init
     write /sys/block/mmcblk1/bdi/read_ahead_kb 512
 
 on early-fs
-    mount_all /fstab.qcom
+    symlink /dev/block/platform/soc.0/f9824900.sdhci /dev/block/bootdevice
+    mount_all fstab.qcom
 
 on init
     # Preload the BoringSSL wrapper
