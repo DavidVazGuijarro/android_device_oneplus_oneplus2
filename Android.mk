@@ -61,14 +61,14 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 
 KEYMASTER_IMAGES := \
-    keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
+    keymaste.b00 keymaste.b01 keymaste.b02 keymaste.b03 keymaste.mdt
 
-KEYMASTER_SYMLINKS :=$(addprefix $(TARGET_OUT_VENDOR)/firmware/keymaster/,$(KEYMASTER_IMAGES))
+KEYMASTER_SYMLINKS :=$(addprefix $(TARGET_OUT_ETC)/firmware/,$(KEYMASTER_IMAGES))
 $(KEYMASTER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "keymaster firmware link: $@"
+	@echo "Keymaster firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(call vfatfilename,$(notdir $@)) $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(KEYMASTER_SYMLINKS)
 
